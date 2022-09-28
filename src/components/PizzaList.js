@@ -1,7 +1,23 @@
 import React from "react";
 import Pizza from "./Pizza";
 
-function PizzaList() {
+function PizzaList({ pizzaData, setSelectedPizza }) {
+
+  console.log({ pizzaData })
+
+  if (pizzaData === undefined) {
+    return null;
+  }
+
+
+  const pizzaRows = pizzaData.map((pizzaDatum) => {
+    return <Pizza
+      key={pizzaDatum.id}
+      pizzaDatum={pizzaDatum}
+      setSelectedPizza={setSelectedPizza}
+    />
+  })
+
   return (
     <table className="table table-striped">
       <thead>
@@ -13,9 +29,7 @@ function PizzaList() {
         </tr>
       </thead>
       <tbody>
-        {
-          //render Pizza here
-        }
+        {pizzaRows}
       </tbody>
     </table>
   );
