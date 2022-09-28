@@ -17,8 +17,12 @@ function App() {
 
 
 
-  const extraProps = (selectedPizza !== undefined)
+  const extraPropsSelectedPizza = (selectedPizza !== undefined)
     ? { selectedPizza: selectedPizza }
+    : {};
+
+  const extraPropsPizzaData = (pizzaData !== undefined)
+    ? { pizzaData: pizzaData }
     : {};
 
 
@@ -26,7 +30,8 @@ function App() {
     <>
       <Header />
       <PizzaForm
-        {...extraProps}
+        {...extraPropsPizzaData}
+        {...extraPropsSelectedPizza}
       />
       <PizzaList
         pizzaData={pizzaData}

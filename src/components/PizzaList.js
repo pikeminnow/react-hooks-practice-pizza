@@ -3,8 +3,6 @@ import Pizza from "./Pizza";
 
 function PizzaList({ pizzaData, setSelectedPizza }) {
 
-  console.log({ pizzaData })
-
   if (pizzaData === undefined) {
     return null;
   }

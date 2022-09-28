@@ -1,6 +1,7 @@
 import React from "react";
 
-function PizzaForm() {
+function PizzaForm({ selectedPizza, pizzaData }) {
+  console.log({ selectedPizza })
   return (
     <form onSubmit={null /*handle that submit*/}>
       <div className="form-row">
@@ -9,7 +10,7 @@ function PizzaForm() {
             className="form-control"
             type="text"
             name="topping"
-            placeholder="Pizza Topping"
+            placeholder={selectedPizza ? pizzaData[selectedPizza].topping : "Pizza Topping"}
           />
         </div>
         <div className="col">
@@ -25,7 +26,7 @@ function PizzaForm() {
               className="form-check-input"
               type="radio"
               name="vegetarian"
-              value="Vegetarian"
+              value={"Vegetarian"}
             />
             <label className="form-check-label">Vegetarian</label>
           </div>
